@@ -5,8 +5,8 @@ description = "可以看pica和jm"
 authors = ["CCYellowStar"]
 license = "GPL-3.0-only"
 readme = "README.md"
-homepage = "https://github.com/CCYellowStar2/nonebot_plugin_PicaJm"
-repository = "https://github.com/CCYellowStar2/nonebot_plugin_PicaJm"
+homepage = "https://github.com/CCYellowStar2/nonebot-plugin-PicaJm"
+repository = "https://github.com/CCYellowStar2/nonebot-plugin-PicaJm"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4"
