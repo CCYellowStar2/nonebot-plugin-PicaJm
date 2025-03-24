@@ -8,12 +8,6 @@ readme = "README.md"
 homepage = "https://github.com/CCYellowStar2/nonebot-plugin-PicaJm"
 repository = "https://github.com/CCYellowStar2/nonebot-plugin-PicaJm"
 
-[tool.poetry.packages]
-includes = [
-    "nonebot_plugin_picajm",
-    "README.md"
-]
-
 [tool.poetry.dependencies]
 python = ">=3.9,<4"
 nonebot2 = ">=2.3.0"
