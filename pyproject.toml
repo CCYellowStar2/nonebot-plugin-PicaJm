@@ -8,7 +8,7 @@ readme = "README.md"
 homepage = "https://github.com/CCYellowStar2/nonebot-plugin-PicaJm"
 repository = "https://github.com/CCYellowStar2/nonebot-plugin-PicaJm"
 packages = [  # 正确格式：数组包含字典
-    { include = "nonebot_plugin_picajm" }
+    { include = "nonebot_plugin_PicaJm" }
 ]
 
 # 单独声明需要包含的非代码文件
