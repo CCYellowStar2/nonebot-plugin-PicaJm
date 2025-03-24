@@ -6,65 +6,25 @@
 
 <div align="center">
 
-# nonebot-plugin-template
+# nonebot-plugin-PicaJm
 
-_✨ NoneBot 插件简单描述 ✨_
+_✨ 在bot上查询和发送jm和哔咔本子 ✨_
 
 
 <a href="./LICENSE">
-    <img src="https://img.shields.io/github/license/owner/nonebot-plugin-template.svg" alt="license">
+    <img src="https://img.shields.io/github/license/owner/nonebot-plugin-PicaJm.svg" alt="license">
 </a>
-<a href="https://pypi.python.org/pypi/nonebot-plugin-template">
-    <img src="https://img.shields.io/pypi/v/nonebot-plugin-template.svg" alt="pypi">
+<a href="https://pypi.python.org/pypi/nonebot-plugin-PicaJm">
+    <img src="https://img.shields.io/pypi/v/nonebot-plugin-PicaJm.svg" alt="pypi">
 </a>
 <img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="python">
 
 </div>
 
-这是一个 nonebot2 插件项目的模板库, 你可以直接使用本模板创建你的 nonebot2 插件项目的仓库
-
-<details open>
-<summary>模板库使用方法</summary>
-
-1. 点击 [![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=A-kirami&template_name=nonebot-plugin-template&owner=%40me&name=nonebot-plugin-&visibility=public) 创建仓库
-2. 在创建好的新仓库中, 在 "Add file" 菜单中选择 "Create new file", 在新文件名处输入`LICENSE`, 此时在右侧会出现一个 "Choose a license template" 按钮, 点击此按钮选择开源协议模板, 然后在最下方提交新文件到主分支
-3. 全局替换`owner`为仓库所有者ID; 全局替换`nonebot-plugin-template`为插件名; 全局替换`nonebot_plugin_template`为包名; 修改 python 徽标中的版本为你插件的运行所需版本
-4. 修改 README 中的插件名和插件描述, 并在下方填充相应的内容
-
-</details>
-
-> [!NOTE]
-> 模板库中自带了一个发布工作流, 你可以使用此工作流自动发布你的插件到 pypi
-
-<details>
-<summary>配置发布工作流</summary>
-
-1. 前往 https://pypi.org/manage/account/#api-tokens 并创建一个新的 API 令牌。创建成功后不要关闭页面，不然你将无法再次查看此令牌。
-2. 在单独的浏览器选项卡或窗口中，打开 [Actions secrets and variables](./settings/secrets/actions) 页面。你也可以在 Settings - Secrets and variables - Actions 中找到此页面。
-3. 点击 New repository secret 按钮，创建一个名为 `PYPI_API_TOKEN` 的新令牌，并从第一步复制粘贴令牌。
-
-</details>
-
-> [!IMPORTANT]
-> 这个发布工作流需要 pyproject.toml 文件, 并且只支持 [PEP 621](https://peps.python.org/pep-0621/) 标准的 pyproject.toml 文件
-
-<details>
-<summary>触发发布工作流</summary>
-从本地推送任意 tag 即可触发。
-
-创建 tag:
-
-    git tag <tag_name>
-
-推送本地所有 tag:
-
-    git push origin --tags
-
-</details>
 
 ## 📖 介绍
 
-这里是插件的详细介绍部分
+可以让你在bot上查询jm和哔咔并打包压缩包下载，其中哔咔功能由于api本身很不稳定，所以有时候要重试好多遍才能用，可以只用jm功能
 
 ## 💿 安装
 
@@ -72,7 +32,7 @@ _✨ NoneBot 插件简单描述 ✨_
 <summary>使用 nb-cli 安装</summary>
 在 nonebot2 项目的根目录下打开命令行, 输入以下指令即可安装
 
-    nb plugin install nonebot-plugin-template
+    nb plugin install nonebot-plugin-PicaJm
 
 </details>
 
@@ -83,27 +43,27 @@ _✨ NoneBot 插件简单描述 ✨_
 <details>
 <summary>pip</summary>
 
-    pip install nonebot-plugin-template
+    pip install nonebot-plugin-PicaJm
 </details>
 <details>
 <summary>pdm</summary>
 
-    pdm add nonebot-plugin-template
+    pdm add nonebot-plugin-PicaJm
 </details>
 <details>
 <summary>poetry</summary>
 
-    poetry add nonebot-plugin-template
+    poetry add nonebot-plugin-PicaJm
 </details>
 <details>
 <summary>conda</summary>
 
-    conda install nonebot-plugin-template
+    conda install nonebot-plugin-PicaJm
 </details>
 
 打开 nonebot2 项目根目录下的 `pyproject.toml` 文件, 在 `[tool.nonebot]` 部分追加写入
 
-    plugins = ["nonebot_plugin_template"]
+    plugins = ["nonebot_plugin_PicaJm"]
 
 </details>
 
@@ -113,14 +73,28 @@ _✨ NoneBot 插件简单描述 ✨_
 
 | 配置项 | 必填 | 默认值 | 说明 |
 |:-----:|:----:|:----:|:----:|
-| 配置项1 | 是 | 无 | 配置说明 |
-| 配置项2 | 否 | 无 | 配置说明 |
+| pica_account | 是 | 无 | 哔咔账号 |
+| pica_password | 是 | 无 | 哔咔密码 |
+| SYSTEM_PROXY | 是 | 无 | 本地代理 |
+| zip_ispwd | 否 | True | 是否开启压缩包密码 |
+| zip_password | 否 | 1919810 | 压缩包密码 |
 
 ## 🎉 使用
 ### 指令表
 | 指令 | 权限 | 需要@ | 范围 | 说明 |
 |:-----:|:----:|:----:|:----:|:----:|
-| 指令1 | 主人 | 否 | 私聊 | 指令说明 |
-| 指令2 | 群员 | 是 | 群聊 | 指令说明 |
+| jmxxxxxx(jm号) + 章节数(可选) | 群员 | 否 | 群聊 | 识别禁漫号发送本子 |
+| 搜jm + 关键字 | 群员 | 否 | 群聊 | 返回符合的jm本子信息列表 |
+| 搜pica + 关键字 | 群员 | 否 | 群聊 | 返回符合的哔咔本子信息列表 |
+| 分区搜 + 分区 + 关键字 | 群员 | 否 | 群聊 | 返回指定分区下的哔咔本子信息列表 |
+| 随机本子 | 群员 | 否 | 群聊 | 返回哔咔随机本子信息并发送 |
+| 我的收藏 + 页数(默认第一页) | 群员 | 否 | 群聊 | 返回我的哔咔收藏下的本子信息 |
+| 哔咔收藏 + 漫画id | 群员 | 否 | 群聊 | 收藏这个id的本子，反之取消 |
+| 哔咔排行 + 排序模式(H24, D7, D30)(默认H24也就是日榜) | 群员 | 否 | 群聊 | 返回哔咔排行榜下的本子信息 |
+| 清理哔咔缓存 | 主人 | 否 | 群聊 | 清理哔咔缓存的所有文件 |
+| 检查哔咔 | 主人 | 否 | 群聊 | 检查哔咔并重新登录 |
 ### 效果图
-如果有效果图的话
+![image](https://github.com/user-attachments/assets/39ff4383-cf90-44dd-b0a8-39f76eb98b69)  
+![image](https://github.com/user-attachments/assets/f7976497-94c5-44cb-83ed-545797ced439)
+
+
