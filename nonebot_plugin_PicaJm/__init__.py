@@ -30,7 +30,9 @@ from jmcomic import *
 plugin_config = get_plugin_config(Config)
 PLUGIN_PATH: Path = Path(__file__).parent.resolve()
 IMAGE_PATH: Path = PLUGIN_PATH / "assets"
-
+if not os.path.exists(IMAGE_PATH):
+    os.mkdir(IMAGE_PATH)
+    
 def image(file):
     return MessageSegment.image(file)
 
